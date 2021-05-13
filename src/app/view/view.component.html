@@ -1,0 +1,51 @@
+<app-sec-header></app-sec-header>
+<nav aria-label="breadcrumb">
+   <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a routerLink="/admin/dashboard">Home</a></li>
+     <li class="breadcrumb-item active" aria-current="page"><a routerLink="/admin/dashboard/table">User Data Table</a></li>
+     <li class="breadcrumb-item active" aria-current="page"><a routerLink="/view">view</a></li>
+   </ol>
+ </nav>
+<!-- <table *ngFor="let obj of userArr; index as i">  -->
+    <div class="container">
+       <!-- <img src="../assets/blank.png" class="center" alt="image" width="250px" height="250px" > -->
+       <img src="http://localhost:3000/uploads/{{obj.profile.slice(12)}}" class="center" width="250px" height="250px" alt="" >
+   <div class="row" >
+   
+   <table >
+      
+   <tr class="table">
+      <td>Id</td>
+      <td class="table-active">{{obj._id}}</td>
+   </tr>
+   <tr class="table">
+     <td >Name</td>
+      <td class="table-active">{{obj.firstName}} {{obj.lastName}}</td>
+   </tr>
+   <tr class="table">
+      <td >Email</td>
+      <td class="table-active">{{obj.email}}</td>
+   </tr>
+   <tr class="table">
+      <td >phone</td>
+      <td class="table-active"> {{obj.phone}}</td>
+   </tr>
+   <tr class="table">
+      <td >Date Of Birth</td>
+      <td class="table-active">{{obj.DOB.slice(0,10)}}</td>
+   </tr>
+   <tr class="table">
+      <td>Gender</td>
+      <td class="table-active">{{obj.gender}}</td>
+   </tr>
+   <tr class="table">
+      <td>password</td>
+      <td class="table-active">{{obj.confirm}}</td>
+   </tr>
+</table>
+
+
+</div>
+</div>
+
+<app-sec-footer></app-sec-footer>

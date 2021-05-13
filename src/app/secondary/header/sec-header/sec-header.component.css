@@ -1,0 +1,13 @@
+.navbar-brand-center{
+   margin-left: auto;
+   margin-right: auto;
+   
+   
+}
+.navbar-brand{
+   font-size: 30px;
+   font-family: sans-serif;
+  /* text align with image */
+   display: flex;
+   align-items:center;
+}

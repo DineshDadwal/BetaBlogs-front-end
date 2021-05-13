@@ -1,0 +1,13 @@
+img{
+   border-radius: 50%;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+   margin-bottom: 10px;
+}
+table{
+   margin: 10px;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+}

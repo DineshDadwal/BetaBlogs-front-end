@@ -1,0 +1,33 @@
+<app-sec-header></app-sec-header>
+
+ 
+ <nav aria-label="breadcrumb">
+   <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+     <li class="breadcrumb-item active" aria-current="page"><a routerLink="/chat">Chat with admin</a></li>
+   </ol>
+ </nav>
+ 
+ 
+<div class="container">
+<img src="../assets/chat.png" width="30%" height="30%" class=" align-top center" alt="" loading="lazy" >
+
+  <form [formGroup]="messageForm">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name" formControlName="name" required="true">
+    </div>
+<div class="form-group ">
+<label for="exampleFormControlTextarea1">Your message</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type here..." formControlName="message" required="true"></textarea>
+      </div>
+    
+    </form>
+   
+
+   <div class="text-center">
+    <button type="button"  class="btn btn-outline-success " (click)="message()" >send</button>
+   </div>
+</div>
+   <app-sec-footer></app-sec-footer>
+

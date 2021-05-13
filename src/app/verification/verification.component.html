@@ -1,0 +1,13 @@
+<app-sec-header></app-sec-header>
+
+<div class="container text-center" >
+   <form action="" [formGroup]="verificationForm">
+   <h1 style="color:orange; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align :center;">E-MAIL VERIFICATION</h1>
+      <label for="" style="text-align: left; font-size: larger;">Enter OTP here</label>
+     <!-- <input type="text" class="form-control" placeholder="Enter Otp here" aria-label="Otp" formControlName="otp" (keyup)="onKey($event)"> -->
+     <input type="text" class="form-control" placeholder="Enter Otp here" aria-label="Otp" formControlName="otp" >
+     
+     <button type="button" class="btn btn-outline-success text-center" (click)="verify()">Check</button>
+   </form>
+ </div>
+<app-footer></app-footer>

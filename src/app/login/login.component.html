@@ -1,0 +1,94 @@
+<app-sec-header></app-sec-header>
+<!-- <app-header></app-header> -->
+<!-- <router-outlet></router-outlet> -->
+
+<!-- login form -->
+<div id="logreg-forms" >
+   <form class="form-signin" [formGroup]="loginForm">
+       <h1 class="h3 mb-3 font-weight-normal" style="text-align: center" routerLink="/user-dashboard"> Sign in</h1>
+       <div class="social-login">
+           <button class="btn facebook-btn social-btn" type="button" (click)="submitLogin()"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
+           <button class="btn google-btn social-btn" type="button" (click)="signIn()" ><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
+       </div>
+       <p style="text-align:center"> OR </p>
+       <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" formControlName="email">
+       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" formControlName="password">
+       
+       <button class="btn btn-success btn-block" type="submit"   (click)="Login()"><i class="fas fa-sign-in-alt" ></i> Sign in</button>
+       <a routerLink="/forgotPassword" id="forgot_pswd">Forgot password?</a>
+       <hr>
+       <!-- <p>Don't have an account!</p>  -->
+       <button class="btn btn-primary btn-block" type="button" id="btn-signup" routerLink="/register"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+       </form>
+
+       <form action="/reset/password/" class="form-reset">
+           <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+           <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+           <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+       </form>
+       
+       <form action="/signup/" class="form-signup">
+           <div class="social-login">
+               <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
+           </div>
+           <div class="social-login">
+               <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+           </div>
+           
+           <p style="text-align:center">OR</p>
+
+           <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
+           <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+           <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+           <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+
+           <button class="btn btn-primary btn-block" type="submit" routerLink="/register"><i class="fas fa-user-plus"></i> Sign Up</button>
+           <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+       </form>
+       <br>
+       
+</div>
+<p style="text-align:center">
+<!-- login form ends -->
+
+<!-- 
+<div class="card text-center" *ngif="user">
+    <h6 class="card-header">Beta Blogs Google Login</h6>
+    <div class="card-block"></div>
+    <img src="{{user.photoUrl}}" alt="" class="card-img-top img-responsive photo">
+    <div class="card-block">
+        <h4 class="card-title">{{user.name}}</h4>
+        <p class="card-text">{{user.email}}</p>
+    </div>
+    <button class="btn btn-primary btn-block" type="submit" routerLink="/login"><i class="fas fa-user-plus" (click)="signOut()"></i> Sign Out</button>
+</div> -->
+<!-- <div *ngIf="user">
+    <h1>{{user.ft.Ue}}</h1>
+    <img src="{{user.ft.iJ}}" alt="">
+</div> -->
+
+<!-- <div class="container" *ngIf="user"> -->
+    <!-- <img src="../assets/blank.png" class="center" alt="image" width="250px" height="250px"> -->
+    <!-- <img src="{{user.ft.iJ}}" class="center" width="250px" height="250px" alt="" >
+<div class="row">
+   
+<table >
+   
+
+<tr class="table">
+  <td >Name</td>
+   <td class="table-active">{{user.ft.Ue}} </td>
+</tr>
+<tr class="table">
+   <td >Email</td>
+   <td class="table-active">{{user.getEmail()}}</td>
+</tr>
+
+
+</table>
+
+</div>
+<button class="btn btn-success" routerLink="/">Login</button>
+
+</div> -->
+<app-footer></app-footer>

@@ -1,0 +1,122 @@
+form{
+   margin-top: 30px;
+   margin-bottom: auto;
+}
+button{
+   margin-bottom: 30px;
+}
+
+
+/* additional css */
+/* header */
+.navbar-brand-center{
+   margin-left: auto;
+   margin-right: auto;
+   
+   
+}
+.navbar-brand{
+   font-size: 30px;
+   font-family: sans-serif;
+  /* text align with image */
+   display: flex;
+   align-items:center;
+}
+
+
+/* The side navigation menu */
+.sidebar {
+   margin: 0;
+   padding: 0;
+   width: 200px;
+   background-color:#e8eaed;
+   position: absolute;
+   height: 100%;
+   top: auto;
+   overflow: hidden;
+   margin-right: none;
+ }
+ 
+ /* Sidebar links */
+ .sidebar a {
+   display: block;
+   color: black;
+   padding: 16px;
+   text-decoration: none;
+ }
+ 
+ /* Active/current link */
+ .sidebar a.active {
+   background-color:#d46622 ;
+   color: white;
+ }
+ 
+ /* Links on mouse-over */
+ .sidebar a:hover:not(.active) {
+   background-color: #555;
+   color: white;
+ }
+ 
+ /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+ div.content {
+   margin-left: 190px;
+   padding: 1px 16px 1px 1px;
+   height: auto;
+ }
+ 
+ /* On screens that are less than 700px wide, make the sidebar into a topbar */
+ @media screen and (max-width: 700px) {
+   .sidebar {
+     width: 100%;
+     height: auto;
+     position: relative;
+     overflow: unset;
+     background-color: transparent;
+   }
+   .sidebar a {float: left;}
+   div.content {margin-left: 0; margin-top: 30px;}
+ }
+ 
+ /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+ @media screen and (max-width: 400px) {
+   .sidebar a {
+     text-align: center;
+     float: none;
+   }
+ }
+
+ form{
+   margin-top: 30px;
+   margin-bottom: auto;
+}
+button{
+   margin-bottom: 30px;
+}
+
+svg{
+   margin: 5px;
+}
+
+
+/* custom file upload */
+.col-3{
+ margin-top: auto;
+ margin-bottom: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  text-align: center;
+  
+}
+.choose{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.bi-check-circle-fill {
+  color: green;
+  margin-bottom: 2px;
+}
+.btn-info{
+  margin: 5px;
+}

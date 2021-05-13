@@ -1,0 +1,85 @@
+/* social media icons for footer */
+.fa {
+   
+   font-size: 35px;
+   height: 38px;
+   width: 38px;
+   text-align: center;
+   text-decoration: none;
+   box-shadow: 2px 2px 2px 2px #222422;
+   
+ }
+ .fa-facebook-f {
+   background: #3B5998;
+   color: white;
+   border-radius: 20%; 
+ }
+ .fa-instagram{
+   background: #e6084a;
+   color: white;
+   border-radius: 20%;
+ }
+ .fa-linkedin {
+   background: #007bb5;
+   color: white;
+   border-radius: 20%;
+ }
+ .fa-twitter {
+   background: #007bb5;
+   color: white;
+   border-radius: 20%;
+ }
+
+ .mx-auto{
+   color: seashell;
+   font-family: sans-serif;
+}
+
+.col{
+  background-color:#d46622;
+}
+
+
+/* sign up button animation  */
+
+.btn{
+  transform-style: preserve-3d;
+  opacity: 1;
+}
+
+.btn::after{
+  top: -100%;
+  left: 0px;
+  width: 100%;
+  position: absolute;
+  background: greenyellow;
+  border-radius: 5px;
+  content: 'Sign in';
+  transform-origin: left bottom;
+  transform: rotateX(90deg);
+}
+.btn:hover{
+  transform-origin: center bottom;
+  transform: rotateX(-90deg) translateY(100%);
+}
+
+/* animation of social media icons */
+.fa:hover{
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/* anchor tag animation */
+a{
+  opacity: 0.7;
+}
+a:hover{
+ 
+  opacity: inherit;
+  
+}
+app-count-view{
+  text-align: center; font-family: sans-serif;font-size: 15px;color: white;
+  margin: 0;
+}

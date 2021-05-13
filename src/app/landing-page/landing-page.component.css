@@ -1,0 +1,171 @@
+/* -----------------primary Navbar----------------- */
+.navbar-brand-center{
+   margin-left: auto;
+   margin-right: auto;
+   
+}
+.navbar-brand{
+   font-size: 30px;
+   font-family: sans-serif;
+   
+}
+/* --------------------Secondary Navbar --------------------- */
+.breadcrumb-item{
+   color: seashell;
+   font-weight: bold;
+   font-family: Montserrat,sans-serif;
+   font-size: 20px;
+}
+text{
+   
+   margin:0 auto; 
+   width:auto;
+}
+
+.initial{
+position: sticky;
+}
+ 
+.img-fluid{
+   margin-left: auto;
+   margin-right: auto;
+}
+.list-group-item{
+   text-decoration: black;
+   font-weight: bold;
+   font-size: 20px;
+
+}
+
+.mx-auto{
+   color: seashell;
+   font-family: sans-serif;
+}
+/* social media icons for footer */
+.fa {
+   
+   font-size: 35px;
+   height: 38px;
+   width: 38px;
+   text-align: center;
+   text-decoration: none;
+   box-shadow: 2px 2px 2px 2px #222422;
+   
+ }
+ .fa-facebook-f {
+   background: #3B5998;
+   color: white;
+   border-radius: 20%; 
+ }
+ .fa-instagram{
+   background: #e6084a;
+   color: white;
+   border-radius: 20%;
+ }
+ .fa-linkedin {
+   background: #007bb5;
+   color: white;
+   border-radius: 20%;
+ }
+ .fa-twitter {
+   background: #007bb5;
+   color: white;
+   border-radius: 20%;
+ }
+
+
+ /* mobile responsive sticky navbar */
+ @media screen and (max-width: 998px){
+    nav.initial{
+       display: none;                  
+    }
+ }
+ @media screen and (min-width:998px){
+    nav.mobile-res{
+       display: none;
+       
+       
+    }
+ }
+ .after{
+    text-align: center;
+    
+ }
+
+ /* dropdown center */
+ .nav-link{
+    margin-right: auto;
+    margin-left: auto ;
+ }
+
+ /* sticky mobile navbar */
+ .mobile-res{
+   position: sticky;
+ }
+
+ /* hover effect for dropdown links */
+ .dropdown-item:hover{
+   background-color: black;
+ }
+ /* pagination position center */
+ .pagination{
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+
+ /* margin btw containers */
+ .container{
+    margin-top: 10px;
+ }
+
+ .card:-moz-focus-outer{
+   background-position: inherit;
+ }
+
+/* animation of card */
+.card{
+   border: 8px dotted seashell;
+}
+.card:hover{
+   border: 8px solid #ff7a59;
+   color: navy;
+   background: #fff;
+}
+
+html{
+   background-color:black;
+}
+.container{
+   background-color: white;
+   border-radius: 2%;
+}
+.media{
+   border-radius: 1.5%;
+   border: 0.5px solid rgba(192, 187, 187, 0.788);
+   box-shadow: 5px 5px #c7c4c4;
+   margin-bottom: 10px ;
+   padding: 15px;
+}
+.card-img-top{
+   max-width: 250px;
+   max-height: 250px;
+}
+p{
+   font-size: 15px;
+  
+}
+h1{
+   font-weight: 500;
+}
+.mb-0{
+   -webkit-line-clamp: 4; /* number of lines to show */
+   word-break: break-word;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+}
+.card-img-top{
+   margin-left: calc((100% - 250px) / 2);
+}

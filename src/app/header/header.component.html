@@ -1,0 +1,242 @@
+
+
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark  ">
+  <button  aria-label="Example icon button with a menu icon" (click)="sidenav.toggle()" class="hamburger btn show" >
+    <mat-icon class="primary ">menu</mat-icon>
+  </button>
+  <a class="navbar-brand navbar-brand-center" href="#">
+    <img src="../assets/logo/logo.png" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy" >
+    <span>Blogs💬</span>
+  </a>
+  <button type="button" class="btn create" style="background-color:#d46622 ;color: white;" routerLink="/login">Create Blog</button>
+</nav>
+
+<!-- dropdown -->
+
+
+
+
+
+<nav class="fixed-top">
+ <mat-sidenav-container>
+   <!-- <mat-sidenav #sidenav mode="push" opened=false>
+    <button (click)="sidenav.close()" >x</button>
+  
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#" routerLink="/register">Register</a></li>
+    <li><a href="#" routerLink="/login">Login</a></li>
+    <li><a href="#">contact</a></li>
+    <li><a href="#">Forgot password</a></li>
+    <li><a href="#" routerLink="/admin">Admin Login</a></li>
+
+  </ul>
+<mat-sidenav-container>
+  mat-sidenav
+  matsidenav-content
+
+  </mat-sidenav> -->
+  
+   <mat-sidenav-content>
+    <nav class="navbar-expand-sm-lg  initial fixed-top" style="position: -webkit-sticky;top: 10px"> 
+      <div class="container text">
+        <div class="row">
+    
+    <button  aria-label="Example icon button with a menu icon" (click)="sidenav.toggle()" class="hamburger btn" >
+      <mat-icon class="primary">menu</mat-icon>
+    </button>
+    <div class="col-lg-2 mx-auto text-center">
+      <a href="" class="breadcrumb-item active" style="text-align: center;" routerLink="/tab/coronavirus">Coronavirus</a>
+    </div>
+    <hr class="clearfix w-100 d-md-none">
+    <div class="col-lg-1 mx-auto text-center">
+      <a href="" class="breadcrumb-item active text-center" routerLink="/tab/news">News</a>
+    </div>
+    <hr class="clearfix w-100 d-md-none">
+    <div class="col-lg-2 mx-auto text-center">
+      <a href="" class="breadcrumb-item active text-center" style="margin-left: 20px;" routerLink="/tab/entertainment">Entertainment</a>
+    </div>
+    <hr class="clearfix w-100 d-md-none">
+    <div class="col-lg-2 mx-auto text-center">
+      <a href="" style="margin-left: 50px;" class="breadcrumb-item active text-center" routerLink="/tab/politics">Politics</a>
+    </div>
+    <hr class="clearfix w-100 d-md-none">
+    <div class="col-lg-2 mx-auto text-center">
+      <a style="margin-left: 20px;"href="" class="breadcrumb-item active text-center" routerLink="/tab/sports">Sports</a>
+    </div>
+    <hr class="clearfix w-100 d-md-none">
+    <div class="col-lg-2 mx-auto text-center">
+      <a href="" class="breadcrumb-item active text-center" routerLink="/tab/technology">Technology</a>
+      
+    </div>
+  </div>
+ 
+</div>
+  </nav>
+  </mat-sidenav-content>
+
+</mat-sidenav-container> 
+
+
+
+
+
+
+
+
+
+ <mat-sidenav #sidenav mode="push" opened=false>
+ 
+ 
+ 
+  <svg width="35px" height="35px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg" (click)="sidenav.close()">
+    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+  </svg>
+
+
+<ul class="text-white" >
+  
+  <li>
+  </li>
+  <hr>
+  <li><a href="#" class="sidehover" style="color: white; margin: 5px;" routerLink="/">Home</a></li>
+  <hr>
+  <li><a href="#" class="sidehover" routerLink="/register" style="color: white;">Sign-up</a></li>
+  <hr>
+  <li><a href="#" class="sidehover" routerLink="/login" style="color: white;">Login</a></li>
+  <hr>
+  <li><a routerLink="/betaBlogs/about" class="sidehover" style="color: white;">Contact</a></li>
+  <hr>
+  <li><a routerLink="/chat" class="sidehover" style="color: white;">Chat with Admin</a></li>
+  <hr>
+  <li><a href="#" class="sidehover" routerLink="/admin/login" style="color: white;">Admin Login</a></li>
+  <hr>
+
+  <a class="navbar-brand navbar-brand-center" href="#">
+    <img src="../assets/logo/logo.png" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy" >
+    <span style="color: white;">Blogs💬</span>
+  </a>
+</ul>
+
+</mat-sidenav>  
+
+
+
+   <!-------------------- ---Hamburger Menu ---------------------- -->
+  
+<!-- 
+    <mat-sidenav-container >
+   
+   <nav  class="navbar-expand-sm-lg  initial sticky-header"> 
+   -->
+     
+<!--   
+     <div class="container text">
+       <div class="row">
+        
+  
+        <button mat-mini  aria-label="Example icon button with a menu icon" (click)="sidenav.open()" class="hamburger">
+          <mat-icon class="primary">menu</mat-icon>
+        </button>
+  
+      
+  
+     
+         <div class="col-lg-2 mx-auto text-center">
+           <a href="" class="breadcrumb-item active" style="text-align: center;" routerLink="/coronavirus">Coronavirus</a>
+         </div>
+         <hr class="clearfix w-100 d-md-none">
+         <div class="col-lg-1 mx-auto text-center">
+           <a href="" class="breadcrumb-item active text-center" routerLink="/news">News</a>
+         </div>
+         <hr class="clearfix w-100 d-md-none">
+         <div class="col-lg-2 mx-auto text-center">
+           <a href="" class="breadcrumb-item active text-center" style="margin-left: 20px;" routerLink="/entertainment">Entertainment</a>
+         </div>
+         <hr class="clearfix w-100 d-md-none">
+         <div class="col-lg-2 mx-auto text-center">
+           <a href="" style="margin-left: 50px;" class="breadcrumb-item active text-center" routerLink="/politics">Politics</a>
+         </div>
+         <hr class="clearfix w-100 d-md-none">
+         <div class="col-lg-2 mx-auto text-center">
+           <a style="margin-left: 20px;"href="" class="breadcrumb-item active text-center" routerLink="/sports">Sports</a>
+         </div>
+         <hr class="clearfix w-100 d-md-none">
+         <div class="col-lg-2 mx-auto text-center">
+           <a href="" class="breadcrumb-item active text-center" routerLink="/technology">Technology</a>
+         </div>
+       </div>
+   
+     </div>
+    
+     <mat-sidenav #sidenav mode="slide" opened=false>
+ 
+ 
+ 
+      <svg width="35px" height="35px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg" (click)="sidenav.close()">
+        <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+        <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+      </svg>
+    
+    
+    <ul class="text-white" >
+      
+      <li>
+      </li>
+      <hr>
+      <li><a href="#" class="sidehover" style="color: white; margin: 5px;">Home</a></li>
+      <hr>
+      <li><a href="#" class="sidehover" routerLink="/register" style="color: white;">Register</a></li>
+      <hr>
+      <li><a href="#" class="sidehover" routerLink="/login" style="color: white;">Login</a></li>
+      <hr>
+      <li><a href="#" class="sidehover" style="color: white;">contact</a></li>
+      <hr>
+      <li><a href="#" class="sidehover" style="color: white;">Forgot password</a></li>
+      <hr>
+      <li><a href="#" class="sidehover" routerLink="/admin" style="color: white;">Admin Login</a></li>
+      <hr>
+    
+    
+    </ul>
+    
+    </mat-sidenav> 
+  
+  </nav>
+   </mat-sidenav-container>  -->
+
+
+
+<!-- <mat-sidenav #sidenav mode="over" opened=false>
+ 
+ 
+ 
+  <svg width="35px" height="35px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg" (click)="sidenav.close()">
+    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+  </svg>
+
+
+<ul class="text-white" >
+  
+  <li>
+  </li>
+  <hr>
+  <li><a href="#" class="sidehover" style="color: white; margin: 5px;">Home</a></li>
+  <hr>
+  <li><a href="#" class="sidehover" routerLink="/register" style="color: white;">Register</a></li>
+  <hr>
+  <li><a href="#" class="sidehover" routerLink="/login" style="color: white;">Login</a></li>
+  <hr>
+  <li><a href="#" class="sidehover" style="color: white;">contact</a></li>
+  <hr>
+  <li><a href="#" class="sidehover" style="color: white;">Forgot password</a></li>
+  <hr>
+  <li><a href="#" class="sidehover" routerLink="/admin" style="color: white;">Admin Login</a></li>
+  <hr>
+
+
+</ul>
+
+</mat-sidenav> -->

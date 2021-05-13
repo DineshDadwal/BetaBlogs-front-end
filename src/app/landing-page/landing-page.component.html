@@ -1,0 +1,91 @@
+<!-- header -->
+<app-header ></app-header>
+<!-- header -->
+
+ 
+ 
+ <div class="container">
+   <div class="row media" *ngFor="let obj of allBlogs | paginate: { itemsPerPage: 5, currentPage: p }"   >
+    <!-- <div class="media"> -->
+      <div id="Content" class="col-lg-4">
+          
+          <img src="http://localhost:3000/uploads/{{obj.Upload.slice(12)}} "width="150px" height="150px" class="card-img-top" alt="..." >
+          <!-- <img src="http://localhost:3000/{{obj.Upload}" class="align-self-center mr-3" alt="..." > -->
+        </div>
+         
+          <div class="col-lg-8" >
+              <h1 class="mt-2">{{obj.title}} </h1>
+              <p class="mb-0" *ngIf="!show" >{{obj.Content}} </p>
+              <a routerLink="/" (click)="show = !show" *ngIf="!show">read more ..</a>
+              <p class="mb-1" *ngIf="show">{{obj.Content}}</p>
+              <p style="margin-top: 10px;
+              font-weight: 500;">by {{obj.author}}</p> <br>
+              <h6>{{obj.createdAt.slice(0,10)}}</h6>
+              
+           
+        <!-- </div> -->
+ </div>
+ </div>
+ </div>
+
+ <!-- new para -->
+ <!-- <div class="container">
+    <div class="row">
+       <div class="col-lg-4">
+ <div class="card" style="width: 18rem; margin: 20px;">
+   <img src="../assets/indo-china.jpg" class="card-img-top" alt="..." >
+   <div class="card-body">
+      <h3 style="color: black; font-weight: bold; text-align: center;">Indo - China Conflicts</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+   </div>
+ </div>
+</div>
+
+<div class="col-lg-8">
+   <h1 style="text-align: center;"> India-China Border Dispute </h1>
+ <p>
+   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis numquam aspernatur natus in vitae! Minus ea quas nisi dolorum, consequatur autem quae excepturi nesciunt dolorem reprehenderit dignissimos totam explicabo obcaecati!
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis facere quod optio voluptatum magnam iure saepe velit, libero sint numquam a nulla nemo cumque consectetur. Molestiae neque quibusdam quas laborum.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium doloremque nemo dolorem sit, deserunt modi adipisci quae corrupti doloribus, odit ex unde placeat fugiat. Rerum sequi dolore corrupti? Sunt, voluptatum!Lorem
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aut et, aperiam magnam odit cum veritatis consequatur officiis rem aliquam atque animi nisi explicabo, dolorum autem rerum blanditiis quisquam vitae!
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quibusdam omnis dicta, exercitationem vitae ducimus libero, voluptate sint facilis veritatis nemo odio optio harum consequuntur earum inventore deleniti impedit illo.lorem
+   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consectetur quae, at mollitia quasi inventore veritatis aut incidunt iusto id nostrum aperiam! Aspernatur quae illum odio minus rerum reiciendis vero!
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quisquam numquam, nulla esse perferendis obcaecati labore eveniet voluptates nesciunt quia excepturi harum in mollitia officiis assumenda cumque debitis aperiam vel.
+ </p>
+  -->
+ <!-- users social media -->
+ <!-- </div>
+   </div>
+ </div>
+ 
+ <hr class="clearfix w-100 d-md-none">
+
+ <p class="container" style="margin-left:auto; margin-right:auto;">
+   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis numquam aspernatur natus in vitae! Minus ea quas nisi dolorum, consequatur autem quae excepturi nesciunt dolorem reprehenderit dignissimos totam explicabo obcaecati!
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis facere quod optio voluptatum magnam iure saepe velit, libero sint numquam a nulla nemo cumque consectetur. Molestiae neque quibusdam quas laborum.
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium doloremque nemo dolorem sit, deserunt modi adipisci quae corrupti doloribus, odit ex unde placeat fugiat. Rerum sequi dolore corrupti? Sunt, voluptatum!Lorem
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aut et, aperiam magnam odit cum veritatis consequatur officiis rem aliquam atque animi nisi explicabo, dolorum autem rerum blanditiis quisquam vitae!
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quibusdam omnis dicta, exercitationem vitae ducimus libero, voluptate sint facilis veritatis nemo odio optio harum consequuntur earum inventore deleniti impedit illo.lorem
+   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consectetur quae, at mollitia quasi inventore veritatis aut incidunt iusto id nostrum aperiam! Aspernatur quae illum odio minus rerum reiciendis vero!
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quisquam numquam, nulla esse perferendis obcaecati labore eveniet voluptates nesciunt quia excepturi harum in mollitia officiis assumenda cumque debitis aperiam vel.
+ </p> -->
+ 
+
+ <!-- pagintion -->
+ <!-- <nav class="pagination" aria-label="Page navigation example">
+   <ul class="pagination">
+     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+     <li class="page-item"><a class="page-link" href="#">1</a></li>
+     <li class="page-item"><a class="page-link" href="#">2</a></li>
+     <li class="page-item"><a class="page-link" href="#">3</a></li>
+     <li class="page-item"><a class="page-link" href="#">Next</a></li>
+   </ul>
+ </nav> -->
+ <!-- /pagintion -->
+ <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+ <!-- Footer -->
+ <app-footer></app-footer>
+ <!-- Footer -->
+ 

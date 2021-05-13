@@ -1,0 +1,138 @@
+
+/* The side navigation menu */
+.sidebar {
+   margin: 0;
+   padding: 0;
+   width: 200px;
+   background-color:#e8eaed;
+   position: absolute;
+   height: 100%;
+   top: auto;
+   overflow: auto;
+   margin-right: none;
+ }
+ 
+ /* Sidebar links */
+ .sidebar a {
+   display: block;
+   color: black;
+   padding: 16px;
+   text-decoration: none;
+ }
+ 
+ /* Active/current link */
+ .sidebar a.active {
+   background-color:#d46622 ;
+   color: white;
+ }
+ 
+ /* Links on mouse-over */
+ .sidebar a:hover:not(.active) {
+   background-color: #555;
+   color: white;
+ }
+ 
+ /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+ div.content {
+   margin-left: 190px;
+   padding: 1px 16px 1px 1px;
+   height: auto;
+ }
+ 
+ /* On screens that are less than 700px wide, make the sidebar into a topbar */
+ @media screen and (max-width: 700px) {
+   .sidebar {
+     width: 100%;
+     height: auto;
+     position: relative;
+     overflow: unset;
+     background-color: transparent;
+   }
+   .sidebar a {float: left;}
+   div.content {margin-left: 0; margin-top: 30px;}
+ }
+ 
+ /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+ @media screen and (max-width: 400px) {
+   .sidebar a {
+     text-align: center;
+     float: none;
+   }
+ }
+
+ form{
+   margin-top: 30px;
+   margin-bottom: auto;
+}
+button{
+   margin-bottom: 30px;
+}
+
+svg{
+   margin: 5px;
+}
+
+
+/* blogs */
+ /* pagination position center */
+ .pagination{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* margin btw containers */
+.container{
+  margin-top: 10px;
+}
+
+.card:-moz-focus-outer{
+ background-position: inherit;
+}
+
+/* animation of card */
+.card{
+ border: 8px dotted seashell;
+}
+.card:hover{
+ border: 8px solid #ff7a59;
+ color: navy;
+ background: #fff;
+}
+
+html{
+ background-color:black;
+}
+.container{
+ background-color: white;
+ border-radius: 2%;
+}
+.media{
+ border-radius: 1.5%;
+ border: 0.5px solid rgba(192, 187, 187, 0.788);
+ box-shadow: 5px 5px #c7c4c4;
+ margin-bottom: 10px ;
+ padding: 15px;
+}
+.card-img-top{
+ max-width: 250px;
+ max-height: 250px;
+}
+p{
+ font-size: 15px;
+
+}
+h1{
+ font-weight: 500;
+}
+.mb-0{
+ -webkit-line-clamp: 4; /* number of lines to show */
+ word-break: break-word;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+}
+.card-img-top{
+ margin-left: calc((100% - 250px) / 2);
+}

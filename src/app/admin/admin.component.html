@@ -1,0 +1,32 @@
+<app-sec-header></app-sec-header>
+<router-outlet></router-outlet>
+<!-- admin logo -->
+<div class="text-center">
+<img src="../assets/admin.png" alt="admin">
+</div>
+<!-- admin logo ends -->
+<form class="container" [formGroup]="adminForm">
+   <div class="form-group text-center">
+     <label for="exampleInputEmail1">Email address</label>
+     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+   </div>
+   <div class="form-group text-center">
+     <label for="exampleInputPassword1">Password</label>
+     <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+   </div>
+   <div class="form-group form-check text-center">
+   
+   </div>
+   <div class="text-center">
+   <button type="submit" class="btn btn-primary" (click)="adminLogin()">sign in</button>
+</div>
+</form>
+
+
+
+<app-sec-footer></app-sec-footer>
+
+
+
+ 

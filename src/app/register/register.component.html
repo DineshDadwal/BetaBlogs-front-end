@@ -1,0 +1,99 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<!-- register form -->
+<div class="text-center">
+<img src="../assets/registration.png" alt="">
+
+</div>
+<div class="container">
+            <form class="form-horizontal" role="form" [formGroup]="registerForm">
+               
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                    <div class="col-sm-12">
+                        <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus formControlName="firstName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+                    <div class="col-sm-12">
+                        <input type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus formControlName="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email* </label>
+                    <div class="col-sm-12">
+                        <input type="email" id="email" placeholder="Email" class="form-control" name= "email" formControlName="email" required>
+                      
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password*</label>
+                    <div class="col-sm-12">
+                        <input type="password" id="password" placeholder="Password" class="form-control" formControlName="password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
+                    <div class="col-sm-12">
+                        <input type="password" id="password" placeholder="Password" class="form-control" formControlName="confirm" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthDate" class="col-sm-3 control-label">Date of Birth*</label>
+                    <div class="col-sm-12">
+                        <input type="date" id="birthDate" class="form-control" formControlName="DOB" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber" class="col-sm-3 control-label">Phone number </label>
+                    <div class="col-sm-12">
+                        <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-control" formControlName="phone" required>
+                        <span class="help-block">Your phone number won't be disclosed anywhere </span>
+                    </div>
+                </div>
+               
+                 
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Gender</label>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="femaleRadio" value="Female" formControlName="gender" >Female
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="maleRadio" value="Male" formControlName="gender">Male
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="maleRadio" value="Trans-gender" formControlName="gender">Trans-gender
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Upload Profile Picture</label>
+                                   <input type="file" class="form-control-file" id="exampleFormControlFile2"  formControlName="profile" (change)="uploadImage($event)"> <button type="button" class="btn btn-info" (click)=onSubmit() (click)="show = !show">Upload</button>
+                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill show" viewBox="0 0 16 16" *ngIf="show">
+                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                   </svg>
+                                   
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /.form-group -->
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <span class="help-block">*Required fields</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"  (click)="Register()">Submit</button>
+            </form> <!-- /form -->
+        </div> <!-- ./container -->
+<!-- register form end -->
+
+<app-footer></app-footer>
