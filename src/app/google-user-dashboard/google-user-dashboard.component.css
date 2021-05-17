@@ -1,0 +1,54 @@
+form{
+   margin-top: 30px;
+   margin-bottom: auto;
+}
+button{
+   margin-bottom: 30px;
+}
+
+svg{
+   margin: 5px;
+}
+.col-3{
+  margin-top: auto;
+  margin-bottom: auto;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 25px;
+   font-weight: normal;
+   text-align: center;
+   
+ }
+ .choose{
+   margin-top: auto;
+   margin-bottom: auto;
+ }
+ 
+ .bi-check-circle-fill {
+   color: green;
+   margin-bottom: 2px;
+ }
+ .btn-info{
+   margin: 5px;
+ }
+ input.ng-invalid{
+  border-left:solid red;
+}
+input.ng-valid{
+  border-left:solid green;
+}
+select.ng-untouched{
+  border-left:solid red;
+}
+select.ng-touched{
+  border-left:solid green;
+}
+textarea.ng-valid{
+  border-left:solid green;
+}
+textarea.ng-invalid{
+  border-left:solid red;
+}
+label{
+  font-weight: 400;
+  font-size: large;
+}

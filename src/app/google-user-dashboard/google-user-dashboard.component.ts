@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import{FormGroup,FormBuilder,Validators, EmailValidator} from '@angular/forms';
+import{FormGroup,FormBuilder,Validators} from '@angular/forms';
 import {DashboardService} from '../services/dashboard/dashboard.service';
 import Swal from 'sweetalert2';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
@@ -9,13 +9,13 @@ import {SubcategoryService} from '../services/subcategory/subcategory.service';
 import { LoginService } from '../services/login/login.service';
 import { HttpClient } from '@angular/common/http';
 import {UserDataTableService} from '../services/userDataTable/user-data-table.service';
-
 @Component({
-  selector: 'app-user-dashboard',
-  templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.css']
+  selector: 'app-google-user-dashboard',
+  templateUrl: './google-user-dashboard.component.html',
+  styleUrls: ['./google-user-dashboard.component.css']
 })
-export class UserDashboardComponent implements OnInit {
+export class GoogleUserDashboardComponent implements OnInit {
+
   dashboardForm:FormGroup
   constructor(private beta:FormBuilder, private dashboard:DashboardService,private category:CategoryService,private subCategory:SubcategoryService,private login:LoginService, private router: Router, private http:HttpClient, private udt:UserDataTableService) { }
   allCategoryObj;
@@ -38,8 +38,7 @@ export class UserDashboardComponent implements OnInit {
       Upload:['', Validators.required],
       author:['', [Validators.required, Validators.minLength(2), Validators.pattern("[a-z A-Z]*")]],
       createdAt:[Date.now()]
-    });
-    
+    })
     this.getCategorys();
     this.getSubCategorys();
    
@@ -134,19 +133,19 @@ deleteImage(i) {
 }
 
 
-stripHTML(editor) {
-  var holder = document.createElement('p');
-  holder.innerHTML = editor;
-  return holder.innerText;
-}
-async getSpecificUser(id){
-  const res:any = await this.udt.getSpecificUser(id)
-  if(res.succes){
-      this.userArr = res.data;
-      // console.log(this.userArr);
-  }
+// stripHTML(editor) {
+//   var holder = document.createElement('p');
+//   holder.innerHTML = editor;
+//   return holder.innerText;
+// }
+// async getSpecificUser(id){
+//   const res:any = await this.udt.getSpecificUser(id)
+//   if(res.succes){
+//       this.userArr = res.data;
+//       // console.log(this.userArr);
+//   }
   
-}
+// }
 async getProfile() {
   const res: any = await this.dashboard.getProfile();
   this.user = res.data;
@@ -158,49 +157,5 @@ async logout(){
   this.router.navigateByUrl('/login');
 }
 
-editorConfig: AngularEditorConfig = {
-  editable: true,
-    spellcheck: true,
-    height: 'auto',
-    minHeight: '0',
-    maxHeight: 'auto',
-    width: 'auto',
-    minWidth: '0',
-    translate: 'no',
-    enableToolbar: true,
-    showToolbar: true,
-    placeholder: 'Enter text here...',
-    defaultParagraphSeparator: '',
-    defaultFontName: '',
-    defaultFontSize: '',
-    fonts: [
-      {class: 'arial', name: 'Arial'},
-      {class: 'times-new-roman', name: 'Times New Roman'},
-      {class: 'calibri', name: 'Calibri'},
-      {class: 'comic-sans-ms', name: 'Comic Sans MS'}
-    ],
-    customClasses: [
-    {
-      name: 'quote',
-      class: 'quote',
-    },
-    {
-      name: 'redText',
-      class: 'redText'
-    },
-    {
-      name: 'titleText',
-      class: 'titleText',
-      tag: 'h1',
-    },
-  ],
-  uploadUrl: 'v1/image',
-  uploadWithCredentials: false,
-  sanitize: false,
-  toolbarPosition: 'top',
-  toolbarHiddenButtons: [
-    ['bold', 'italic'],
-    ['fontSize']
-  ]
-};
+
 }

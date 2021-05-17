@@ -1,5 +1,5 @@
-<app-sec-header></app-sec-header>
 
+<app-admin-header></app-admin-header>
 <!-- The sidebar -->
 <div class="sidebar">
   <a  routerLink="/admin/dashboard"><svg width="15px" height="15px" viewBox="0 0 16 16" class="bi bi-pie-chart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -38,23 +38,33 @@
   <form [formGroup]="dashboardForm">
     <div class="form-group container">
       <label for="exampleFormControlInput1">Title</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title name" formControlName="title">
+      <div style="display: flex;">
+      <input type="text" id="title" class="form-control" id="exampleFormControlInput1" placeholder="Title name" formControlName="title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill show" viewBox="0 0 16 16" *ngIf="dashboardForm.valid">
+       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+     </svg></div>
     </div>
     <div class="form-group container">
       <label for="exampleFormControlSelect1">Choose your Blog Topic</label>
+      <div style="display: flex;">
       <select class="form-control" id="exampleFormControlSelect1" formControlName="categoryId" (change)="filterSubCategory($event)">
         <option  *ngFor="let obj of allCategoryObj" [value]="obj._id">{{obj.name}}</option>
+        
         <!-- <option value="News">News</option>
         <option value="Entertainment">Entertainment</option>
         <option value="Politics">Politics</option>
         <option value="Sports">Sports</option>
         <option value="Technolgy">Technology</option>
         <option value="Other">other</option> -->
-      </select>
-      <label for="exampleFormControlSelect2">Choose your Blog Sub-Topic <span style="font-size: 10px;">*optinal</span></label>
+      </select><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill show" viewBox="0 0 16 16" *ngIf="dashboardForm.valid">
+       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+     </svg></div>
+      <label for="exampleFormControlSelect2">Choose your Blog Sub-Topic <h6>*optinal</h6></label>
+      <div style="display: flex;">
       <select class="form-control" id="exampleFormControlSelect2" formControlName="subCategoryId">
         <option *ngFor="let obj of tempAllSubCategoryObj"  [value]="obj._id">{{obj.name}}</option>
-        </select>
+        </select><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill show" viewBox="0 0 16 16" *ngIf="dashboardForm.valid">
+         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+       </svg></div>
     </div>
    
     <div class="form-group container">
@@ -63,30 +73,35 @@
        
        <!-- <angular-editor id="editor" formControlName="Content" [config]="editorConfig"></angular-editor> -->
        <label for="exampleFormControlTextarea1">Blog Content</label>
-       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type here..." formControlName="Content"></textarea>
-       <div class="form-group ">
-        <label for="exampleFormControlInput3">Author name: </label>
-        <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Title name" formControlName="author" >
-      </div>
-       <div class="form-group">
+       <div style="display: flex;">
+       <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Type here..." formControlName="Content" ></textarea><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill show" viewBox="0 0 16 16" *ngIf="dashboardForm.valid">
+         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+       </svg></div>
+       <div class="form-group" >
           <label for="exampleFormControlFile1">Upload Pictures</label>
-         <input type="file" class="form-control-file" id="exampleFormControlFile2"  formControlName="Upload" (change)="uploadImage($event)"> <button type="button" class="btn btn-info" (click)=onSubmit() (click)="show = !show">Upload</button>
+         <input type="file" class="form-control-file" id="exampleFormControlFile2"  formControlName="Upload" (change)="uploadImage($event)"><span> <button type="button" class="btn btn-info" (click)=onSubmit() (click)="show = !show" [disabled]="dashboardForm.invalid">Upload</button></span>
          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill show" viewBox="0 0 16 16" *ngIf="show">
            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
          </svg>
          <div class="row" *ngFor="let obj of displayArr;index as i ">
            <div class="col-3">{{obj}}</div>
-           <div class="col-1"><button class="btn btn-danger choose" (click)="deleteImage(i)"> <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg" >
+           <div class="col-1"><button class="btn btn-danger choose" (click)="deleteImage(i)" > <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg" >
              <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
              <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
            </svg></button></div>
        </div>
        </div> 
     </div>
-    
+    <div class="form-group container">
+     <label for="exampleFormControlInput3">Author name: </label>
+     <div style="display: flex;">
+     <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Author name" formControlName="author" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill show" viewBox="0 0 16 16" *ngIf="dashboardForm.valid">
+       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+     </svg></div>
+   </div>
   </form>
   <div class="text-center">
-  <button type="button"  class="btn btn-outline-success " (click)="Dashboard()" >Publish</button>
+  <button type="button"  class="btn btn-outline-success " (click)="Dashboard()" [disabled]="dashboardForm.invalid">Publish</button>
  </div>
 </div>
 <!-- User form for blog -->

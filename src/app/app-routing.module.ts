@@ -21,6 +21,7 @@ import { SecHeaderComponent } from './secondary/header/sec-header/sec-header.com
 import {ViewComponent} from './view/view.component';
 import { UserLoginGuard } from './services/login/user-login.guard';
 import { AdminGuardGuard } from './services/admin-login/admin-guard.guard';
+import {GoogleLoginGuardGuard} from './services/google-login-guard.guard'
 import { CategoryComponent } from './category/category.component';
 import { SubcategoryComponent } from './subcategory/subcategory.component';
 import {BlogsComponent} from './user-dashboard/blogs/blogs.component';
@@ -35,16 +36,21 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CountViewComponent } from './count-view/count-view.component';
-
+import { AdminHeaderComponent } from './secondary/admin-header/admin-header.component';
+import { UserHeaderComponent } from './secondary/user-header/user-header.component';
+import { GoogleUserDashboardComponent } from './google-user-dashboard/google-user-dashboard.component';
 const routes: Routes = [
   {path:'', component:LandingPageComponent},
   {path: 'header', component:HeaderComponent},
+  {path: 'Admin-header', component:AdminHeaderComponent},
+  {path: 'User-header', component:UserHeaderComponent},
   {path: 'admin/dashboard/messages', component:MessageComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'forgotPassword', component: ForgotPasswordComponent},
   {path: 'forgotPassword/reset-password', component: ResetPasswordComponent},
   {path: 'view-count', component: CountViewComponent},
   {path: 'user-dashboard/profile', component: ProfileComponent, canActivate: [UserLoginGuard]},
+  {path: 'user/proxy-user-dashboard', component: GoogleUserDashboardComponent,canActivate: [GoogleLoginGuardGuard] },
   {path: 'chat', component: ChatComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'login', component:LoginComponent},

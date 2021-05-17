@@ -62,3 +62,39 @@ img{
 .btn-info{
   margin: 5px;
 }
+input.ng-invalid{
+  border-left:solid 5px red;
+}
+input.ng-untouched{
+  border-left:solid 5px red;
+}
+input.ng-valid{
+  border-left:solid green;
+}
+select.ng-untouched{
+  border-left:solid red;
+}
+select.ng-touched{
+  border-left:solid green;
+}
+textarea.ng-valid{
+  border-left:solid green;
+}
+textarea.ng-invalid{
+  border-left:solid red;
+}
+label{
+  font-weight: 400;
+  font-size: large;
+  margin-top: 10px;
+}
+.form-control-file{
+  color: cornflowerblue;
+  border-radius: 2%;
+  font-size: larger;
+}
+.bi-check-circle-fill {
+  color: green;
+  margin-top: 2px;
+  /* margin-bottom: 2px; */
+}

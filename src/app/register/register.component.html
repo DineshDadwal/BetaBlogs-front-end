@@ -1,6 +1,12 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<app-sec-header></app-sec-header>
+<!-- <router-outlet></router-outlet> -->
 <!-- register form -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a routerLink="/404">Register</a></li>
+    </ol>
+  </nav>
 <div class="text-center">
 <img src="../assets/registration.png" alt="">
 
@@ -21,22 +27,26 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email* </label>
+                    <label for="email" class="col-sm-3 control-label">Email </label>
                     <div class="col-sm-12">
                         <input type="email" id="email" placeholder="Email" class="form-control" name= "email" formControlName="email" required>
                       
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password*</label>
-                    <div class="col-sm-12">
-                        <input type="password" id="password" placeholder="Password" class="form-control" formControlName="password" required>
+                    <label for="password" class="col-sm-12 control-label">Password <h5>(minimum length is 8. with a capital letter and a symbol)</h5></label>
+                    <div class="col-sm-12" style="display: flex;">
+                        <input type="password" id="password" placeholder="Create Password" class="form-control" formControlName="password" required><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill show" viewBox="0 0 16 16" *ngIf="registerForm.valid">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                          </svg>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
-                    <div class="col-sm-12">
-                        <input type="password" id="password" placeholder="Password" class="form-control" formControlName="confirm" required>
+                    <label for="password" class="col-sm-12 control-label">Confirm Password </label>
+                    <div class="col-sm-12" style="display: flex;">
+                        <input type="password" id="password2" placeholder="Password must match with above input" class="form-control" formControlName="confirm" required><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill show" viewBox="0 0 16 16" *ngIf="registerForm.valid">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                          </svg>
                     </div>
                 </div>
                 <div class="form-group">
@@ -70,13 +80,13 @@
                             </div>
                             <div class="col-sm-4">
                                 <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" value="Trans-gender" formControlName="gender">Trans-gender
+                                    <input type="radio" id="Trans-genderRadio" value="Trans-gender" formControlName="gender">Trans-gender
                                 </label>
                             </div>
                             <div class="col-sm-9">
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Upload Profile Picture</label>
-                                   <input type="file" class="form-control-file" id="exampleFormControlFile2"  formControlName="profile" (change)="uploadImage($event)"> <button type="button" class="btn btn-info" (click)=onSubmit() (click)="show = !show">Upload</button>
+                                   <input type="file" class="form-control-file" id="exampleFormControlFile2"  formControlName="profile" (change)="uploadImage($event)"> <button type="button" class="btn btn-info" (click)=onSubmit() (click)="show = !show" [disabled]="registerForm.invalid">Upload</button>
                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill show" viewBox="0 0 16 16" *ngIf="show">
                                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                    </svg>
@@ -91,7 +101,7 @@
                         <span class="help-block">*Required fields</span>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block"  (click)="Register()">Submit</button>
+                <button type="submit" class="btn btn-primary btn-block"  (click)="Register()" [disabled]="registerForm.invalid">Submit</button>
             </form> <!-- /form -->
         </div> <!-- ./container -->
 <!-- register form end -->

@@ -1,0 +1,379 @@
+/* -----------------primary Navbar----------------- */
+.navbar-brand-center{
+   margin-left: auto;
+   margin-right: auto;
+   
+   
+}
+
+
+.navbar-brand{
+   font-size: 30px;
+   font-family: sans-serif;
+  /* text align with image */
+   display: flex;
+   align-items:center;
+}
+/* --------------------Secondary Navbar --------------------- */
+.breadcrumb-item{
+   color: seashell;
+   font-weight: bold;
+   font-family: Montserrat,sans-serif;
+   font-size: 20px;
+   text-decoration: none;
+}
+text{
+   
+   margin:0 auto; 
+   width:auto;
+}
+
+.initial{
+background-color:#d46622;
+}
+ nav{
+   position: sticky;
+ }
+.img-fluid{
+   margin-left: auto;
+   margin-right: auto;
+}
+.list-group-item{
+   text-decoration: black;
+   font-weight: bold;
+   font-size: 20px;
+
+}
+
+.mx-auto{
+   color: seashell;
+   font-family: sans-serif;
+   padding: 5px 5px;
+}
+
+
+ /* mobile responsive sticky navbar */
+ .main-menu{
+   display: visible;
+ }
+ @media screen and (max-width: 700px){
+   nav.initial{
+      display: none;                  
+   }
+   
+   
+}
+@media screen and (min-width:700px){
+   nav.mobile-res{
+      display: none;
+      
+      
+   }
+   .show{
+    display: none;
+  }
+ 
+}
+.after{
+   text-align: center;
+   
+}
+@media screen and (max-width:355px){
+.create{
+  display: none;
+}
+}
+
+
+/* dropdown center */
+.nav-link{
+   margin-right: auto;
+   margin-left: auto ;
+}
+
+/* sticky mobile navbar */
+.mobile-res{
+  position: sticky;
+}
+
+/* hover effect for dropdown links */
+.dropdown-item:hover{
+  background-color: black;
+}
+
+
+
+
+/* hamburger menu */
+sr-only {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0,0,0,0);
+   border: 0;
+ }
+ 
+ /* Button styling */
+ .menu-toggle {
+   display: inline-block;
+   padding: 8px 8px;
+   line-height: 1em;
+   font-size: 20px;
+   color: #333;
+ }
+
+ 
+ .menu-toggle:focus {
+   color: rgb(44, 33, 33);
+ }
+ 
+ /*
+  Default styles + Mobile first
+  Offscreen menu style
+ */
+ .main-menu {
+   position: absolute;
+   display: none;
+   left: -200px;
+   top: 0;
+   height: 100%;
+   overflow-y: scroll;
+   overflow-x: visible;
+   transition: left 0.3s ease,
+        box-shadow 0.3s ease;
+   z-index: 999;
+ }
+ 
+ .main-menu ul {
+   list-style: none;
+   margin: 0;
+   padding: 2.5em 0 0;
+   /* Hide shadow w/ -8px while 'closed' */
+   -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+      -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+           box-shadow: -8px 0 8px rgba(0,0,0,.5);
+   min-height: 100%;
+   width: 220px ;
+   background: #1a1a1a;
+ }
+ 
+ .main-menu a {
+   display: block;
+   padding: .75em 15px;
+   line-height: 1em;
+   font-size: 1em;
+   color: #fff;
+   text-decoration: none;
+   border-bottom: 1px solid #383838;
+ }
+ 
+ .main-menu li:first-child a {
+   border-top: 1px solid #383838;
+ }
+ 
+ .main-menu a:hover,
+ .main-menu a:focus {
+   background: #d46622;
+   text-decoration: underline;
+ }
+ 
+ .main-menu .menu-close {
+   position: absolute;
+   right: 0;
+   top: 0;
+ }
+ 
+ 
+ /*
+  More to come here...
+ */
+ 
+ 
+ /*
+  Demo purposes only
+ */
+ *,
+ *:before,
+ *:after {
+   box-sizing: border-box;
+ }
+ 
+ header {
+   padding: 20px;
+   display: flex;
+   align-items: baseline;
+ }
+ 
+ article {
+   padding: 30px;
+   width: 55em;
+   font-size: 16px;
+   line-height: 1.5em;
+ }
+ 
+ article h2 {
+   font-weight: 500;
+   font-size: 28px;
+ }
+ 
+ .logo {
+   margin: 0 30px 0 10px;
+   font-size: 1.5em;
+ }
+
+ /* responsiveness of hamburger menu */
+ .main-menu:target,
+.main-menu[aria-expanded="true"] {
+  display: block;
+  left: 0;
+  outline: none;
+  -moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  box-shadow: 3px 0 12px rgba(0,0,0,.25);
+}
+
+.main-menu:target .menu-close,
+.main-menu[aria-expanded="true"] .menu-close {
+  z-index: 1001;
+}
+
+.main-menu:target ul,
+.main-menu[aria-expanded="true"] ul {
+  position: relative;
+  z-index: 1000;
+}
+
+/* 
+ We could us `.main-menu:target:after`, but
+ it wouldn't be clickable.
+*/
+.main-menu:target + .backdrop,
+.main-menu[aria-expanded="true"] + .backdrop{
+  position: absolute;
+  display: block;  
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  background: #000;
+  background: rgba(0,0,0,.85);
+  cursor: default;
+}
+
+@supports (position: fixed) {
+  .main-menu,
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded="true"] + .backdrop{
+    position: fixed;
+  }
+}
+
+/* tabs animation */
+
+/* 
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+
+
+.breadcrumb-item:hover{
+  animation: bounce 1s;
+  animation-timing-function: ease;
+} */
+
+
+
+
+/* hszehdxttttttttttt */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+ .example-container {
+  width: 100%;
+  height: 100%;
+  /* margin: 10px; */
+   border: 1px solid #555;
+} 
+
+mat-drawer-content{
+   width: 100%;
+   height: 100%;
+}
+
+mat-drawer{
+   width :300px;
+   height: 100%;
+   box-shadow: rgba(0,0,0,.25);
+}
+
+mat-icon{
+  color: #000;
+  background-color: #d46622;
+  
+}
+.hamburger{
+  background-color: #d46622;
+}
+
+mat-sidenav{
+  display: block;
+  position: fixed;
+  
+}
+
+li{
+  font-size: 25px;
+  list-style: none;
+  
+}
+li > a{
+  text-decoration: none;
+}
+
+
+/* a:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+} */
+li:hover{
+  /* -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2); */
+  color: #d46622;
+}
+
+mat-sidenav-content{
+  position: sticky;
+  top:50px;
+
+}
+mat-sidenav{
+  text-decoration: none;
+}
+.btn{
+  border-color: #d46622;
+}
+.breadcrumb-item {
+  padding-top: 5px;
+
+}

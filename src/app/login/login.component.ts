@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 import {AuthService, SocialUser, GoogleLoginProvider} from 'angular4-social-login';
 import { GmailServiceService } from '../services/gmail-service.service';
 import { async } from '@angular/core/testing';
+declare var FB: any;
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,10 +19,10 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup
 // user: any;
 // messages: gapi.client.gmail.Message[]
-// message:string
-FB: any;
+users;
 title = 'blog';
-  user: gapi.auth2.GoogleUser
+  // user: gapi.auth2.GoogleUser
+  user: SocialUser
   constructor(private login:LoginService, private beta:FormBuilder, private router: Router, private GoogleLoginService:GoogleLoginService, private ref:ChangeDetectorRef, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -28,28 +30,41 @@ title = 'blog';
       email:[''],
       password:['']
     });
+    
     // this.authService.authState.subscribe((user) => {
     //   this.user = user;
     //   console.log(user)
     // })
     
     this.GoogleLoginService.observable().subscribe(user =>{
-      this.user = user 
-      
-      // console.log(user)
-      // this.message = null
-      // this.messages = null
+      this.users = user.getBasicProfile() 
       this.ref.detectChanges()
-      if(this.user !== null){
-        console.log(this.user)
-       this.googleData()
-  // this.router.navigateByUrl('/verification')
-
+      if(this.users !== null){
+        console.log("Sign in Success")
       }else{
         console.log("not yet")
       }
      
-    })
+    });
+    (window as any).fbAsyncInit = function() {
+      FB.init({
+        appId      : '481538063277279',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v3.1'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
   }
 
 
@@ -76,14 +91,18 @@ title = 'blog';
   }
 }
 submitLogin(){
-  this.FB.login((response)=>{
+  FB.login((response)=>{
     console.log('submitLogin', response);
     if(response.authResponse){
-  console.log("logged in to facebook");
+  console.log(response);
     Swal.fire(
       'You are successfully Logged In!',
       'success'
-    )}else{
+    )
+ 
+    this.router.navigateByUrl('/user/proxy-user-dashboard');
+
+  }else{
       console.log("user login failed")
     }
   })
@@ -107,14 +126,13 @@ async signIn(){
   
 
 }
- signOut(){
-  this.GoogleLoginService.signOut()
-}
-googleData(){
-  this.http.post<any>('http://localhost:3000/google/google', this.user).subscribe(
-  (res) => console.log(res),
-  (err) => console.log(err)
-);}
+
+
+// googleData(){
+//   this.http.post<any>('http://localhost:3000/google/google', this.user).subscribe(
+//   (res) => console.log(res),
+//   (err) => console.log(err)
+// );}
 // onSubmit(){
 
 

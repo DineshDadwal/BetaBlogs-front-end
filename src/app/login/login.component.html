@@ -1,9 +1,14 @@
 <app-sec-header></app-sec-header>
 <!-- <app-header></app-header> -->
 <!-- <router-outlet></router-outlet> -->
-
+<nav aria-label="breadcrumb" *ngIf="!users">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a routerLink="/404">Login</a></li>
+    </ol>
+  </nav>
 <!-- login form -->
-<div id="logreg-forms" >
+<div id="logreg-forms" *ngIf="!users">
    <form class="form-signin" [formGroup]="loginForm">
        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center" routerLink="/user-dashboard"> Sign in</h1>
        <div class="social-login">
@@ -62,10 +67,20 @@
     </div>
     <button class="btn btn-primary btn-block" type="submit" routerLink="/login"><i class="fas fa-user-plus" (click)="signOut()"></i> Sign Out</button>
 </div> -->
-<!-- <div *ngIf="user">
-    <h1>{{user.ft.Ue}}</h1>
-    <img src="{{user.ft.iJ}}" alt="">
-</div> -->
+<div class="container">
+<div class="card text-center" *ngIf="users" >
+    <h1 class="card-header">Welcome To Beta Blogs</h1>
+    <img src="{{users.ZJ}}" alt="" class="card-img-top img-responsive photo">
+    <div class="card-block">
+        <h2>{{users.Ve}}</h2>
+        <h1>{{users.ku}}</h1>
+        <a routerLink="/user/proxy-user-dashboard">
+        <button class="btn btn-success btn-block" type="submit"  [routerLink]="['/user/proxy-user-dashboard']"  ><i class="fas fa-sign-in-alt" ></i> Sign in</button></a>
+    </div>
+    
+</div>
+ 
+</div>
 
 <!-- <div class="container" *ngIf="user"> -->
     <!-- <img src="../assets/blank.png" class="center" alt="image" width="250px" height="250px"> -->

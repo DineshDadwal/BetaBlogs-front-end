@@ -1,0 +1,66 @@
+
+<mat-sidenav-container>
+   
+   <mat-sidenav-content>
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark  ">
+   
+   <button  aria-label="Example icon button with a menu icon" (click)="sidenav.toggle()" class="hamburger btn show" >
+     <mat-icon class="primary ">menu</mat-icon>
+   </button>
+   <a class="navbar-brand navbar-brand-center" href="#">
+     <img src="../assets/logo/logo.png" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy" >
+     <span>Blogs💬</span>
+   </a>
+
+ </nav>
+</mat-sidenav-content>
+ 
+</mat-sidenav-container> 
+ <!-- dropdown -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <mat-sidenav #sidenav mode="push" opened=false>
+  
+  
+  
+   <svg width="35px" height="35px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg" (click)="sidenav.close()">
+     <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+     <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+   </svg>
+ 
+ 
+ <ul class="text-white" >
+   
+   <li>
+   </li>
+   <hr>
+   <li><a href="#" class="sidehover" style="color: white; margin: 5px;" routerLink="/user-dashboard">Home</a></li>
+   <hr>
+   <li><a href="#" class="sidehover" routerLink="/chat" style="color: white;">Chat</a></li>
+   <hr>
+   <li><a href="#" class="sidehover" routerLink="/user-dashboard/profile" style="color: white;">Profile</a></li>
+   <hr>
+   <li><a href="#" class="sidehover" routerLink="/" style="color: white;" (click)="logout()">Logout</a></li>
+   <hr>
+ 
+ 
+   <a class="navbar-brand navbar-brand-center" href="#">
+     <img src="../assets/logo/logo.png" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy" >
+     <span style="color: white;">Blogs💬</span>
+   </a>
+ </ul>
+ 
+ </mat-sidenav>  
+ 
+ 
+ 
+  

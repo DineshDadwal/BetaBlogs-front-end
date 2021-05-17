@@ -114,8 +114,9 @@
    object-fit: contain;
 }
 .card{
-   width: 20rem;
+   width: 50%;
    margin: 0 auto;
+   padding: 20px;
 }
 img{
    border-radius: 50%;
@@ -123,6 +124,7 @@ img{
    margin-right: auto;
    display: block;
    margin-bottom: 10px;
+   width: 200px;
 }
 table{
    margin: 10px;

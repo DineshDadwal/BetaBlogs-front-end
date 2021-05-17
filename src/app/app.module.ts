@@ -87,6 +87,9 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CountViewComponent } from './count-view/count-view.component';
+import { AdminHeaderComponent } from './secondary/admin-header/admin-header.component';
+import { UserHeaderComponent } from './secondary/user-header/user-header.component';
+import { GoogleUserDashboardComponent } from './google-user-dashboard/google-user-dashboard.component';
 
 // import { SocialLoginModule, GoogleLoginProvider, AuthServiceConfig } from 'angular4-social-login';
 // import {AuthServiceConfig} from  'angular-6-social-login'
@@ -135,7 +138,10 @@ import { CountViewComponent } from './count-view/count-view.component';
     ResetPasswordComponent,
     NotFoundPageComponent,
     ProfileComponent,
-    CountViewComponent
+    CountViewComponent,
+    AdminHeaderComponent,
+    UserHeaderComponent,
+    GoogleUserDashboardComponent
     
     // dgs
     

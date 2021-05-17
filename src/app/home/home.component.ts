@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import{FormGroup,FormBuilder,} from '@angular/forms';
+import{FormGroup,FormBuilder,Validators} from '@angular/forms';
 import {DashboardService} from '../services/dashboard/dashboard.service';
 import Swal from 'sweetalert2';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
@@ -30,12 +30,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.dashboardForm=this.beta.group({
     
-      title:[''],
-      categoryId:[''],
+      title:['', [Validators.required, Validators.minLength(2)]],
+      categoryId:['', Validators.required],
       subCategoryId:[''],
-      Content:[''],
-      Upload:[''],
-      author:[''],
+      Content:['', [Validators.required, Validators.minLength(50)]],
+      Upload:['', Validators.required],
+      author:['', [Validators.required, Validators.minLength(2), Validators.pattern("[a-z A-Z]*")]],
       createdAt:[Date.now()]
     })
     this.getCategorys();

@@ -17,15 +17,15 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm=this.beta.group({
-      firstName:[''],
-      lastName:[''],
-      email:[''],
-      password:[''],
-      confirm:[''],
-      DOB:[''],
-      phone:[''],
-      gender:[''],
-      profile:['']
+      firstName:['', [Validators.required, Validators.pattern("[a-z A-Z]*")]],
+      lastName:['', [Validators.required , Validators.pattern("[a-z A-Z]*")]],
+      email:['', [Validators.required , Validators.email]],
+      password:['', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]],
+      confirm:['', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]],
+      DOB:['', [Validators.required]],
+      phone:['', [Validators.required, Validators.pattern('[0-9]*'), Validators.minLength(8), Validators.maxLength(15)]],
+      gender:['', [Validators.required]],
+      profile:['', [Validators.required]]
     })
   }
   async Register(){
