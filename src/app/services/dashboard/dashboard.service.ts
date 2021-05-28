@@ -4,7 +4,8 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class DashboardService {
-  url="http://localhost:3000"
+  url="https://betablogs-backend.herokuapp.com"
+
   constructor(private http:HttpClient) { }
   async Dashboard(formData){
     return this.http.post(`${this.url}/dashboard/dashboard`, formData).toPromise();
@@ -35,6 +36,9 @@ export class DashboardService {
   }
   async deleteBlog(id){
     return this.http.delete(`${this.url}/admin/deleteBlog/${id}`).toPromise();
+  }
+  async getSpecificBlog(id){
+    return this.http.get(`${this.url}/dashboard/getSpecificBlog/${id}`).toPromise();
   }
 }
 

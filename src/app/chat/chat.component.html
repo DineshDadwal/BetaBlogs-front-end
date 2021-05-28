@@ -10,7 +10,7 @@
  
  
 <div class="container">
-<img src="../assets/chat.png" width="30%" height="30%" class=" align-top center" alt="" loading="lazy" >
+<img src="../assets/chat.png" width="20%" height="20%" class=" align-top center" alt="" loading="lazy" >
 
   <form [formGroup]="messageForm">
     <div class="form-group">
@@ -26,7 +26,7 @@
    
 
    <div class="text-center">
-    <button type="button"  class="btn btn-outline-success " (click)="message()" >send</button>
+    <button type="button"  class="btn btn-outline-success " (click)="message()" [disabled]="messageForm.invalid">send</button>
    </div>
 </div>
    <app-sec-footer></app-sec-footer>

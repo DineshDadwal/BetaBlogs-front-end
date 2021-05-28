@@ -118,7 +118,7 @@ onSubmit(){
   const formData = new FormData;
   formData.append('Upload', this.image);
 // console.log(this.image)
-  this.http.post<any>('http://localhost:3000/dashboard/file', formData).subscribe(
+  this.http.post<any>('https://betablogs-backend.herokuapp.com/dashboard/file', formData).subscribe(
     (res) => console.log(res),
     (err) => console.log(err)
   );

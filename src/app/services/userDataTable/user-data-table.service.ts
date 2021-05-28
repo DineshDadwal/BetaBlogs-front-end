@@ -6,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
 export class UserDataTableService {
 
   constructor(private http:HttpClient) { }
-  url= 'http://localhost:3000';
+  url="https://betablogs-backend.herokuapp.com"
+
   async getUser() {
     return this.http.get(`${this.url}/userDataTable/getUser`).toPromise();
   }

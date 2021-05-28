@@ -74,19 +74,23 @@ title = 'blog';
   if(res.success){
     // alert(res.message)
     Swal.fire(
-      'You are successfully Logged In!',
-      'success'
+      {
+      
+        icon: 'success',
+        title: 'Welcome',
+        showConfirmButton: false,
+        timer: 1500}
     )
     this.router.navigateByUrl('/user-dashboard');
   }
   else{
     Swal.fire({
-      icon: 'error',
+      icon: 'warning',
       title: 'Wrong Password',
       text: 'check Your Credentials',
       footer: '<a href>Why do I have this issue?</a>'
     })
-    this.router.navigateByUrl('/404');
+    // this.router.navigateByUrl('/404');
 
   }
 }
@@ -95,15 +99,23 @@ submitLogin(){
     console.log('submitLogin', response);
     if(response.authResponse){
   console.log(response);
-    Swal.fire(
-      'You are successfully Logged In!',
-      'success'
+    Swal.fire({
+      
+      icon: 'success',
+      title: 'Welcome',
+      showConfirmButton: false,
+      timer: 1500}
     )
  
     this.router.navigateByUrl('/user/proxy-user-dashboard');
 
   }else{
-      console.log("user login failed")
+    Swal.fire({
+      icon: 'error',
+      title: 'Wrong Password',
+      text: 'check Your Credentials',
+      footer: '<a href>Why do I have this issue?</a>'
+    })
     }
   })
 }

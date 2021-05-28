@@ -39,8 +39,11 @@ import { CountViewComponent } from './count-view/count-view.component';
 import { AdminHeaderComponent } from './secondary/admin-header/admin-header.component';
 import { UserHeaderComponent } from './secondary/user-header/user-header.component';
 import { GoogleUserDashboardComponent } from './google-user-dashboard/google-user-dashboard.component';
+import { SpecificBlogComponent } from './specific-blog/specific-blog.component';
+
 const routes: Routes = [
   {path:'', component:LandingPageComponent},
+  {path:'specific-blog/:id', component:SpecificBlogComponent},
   {path: 'header', component:HeaderComponent},
   {path: 'Admin-header', component:AdminHeaderComponent},
   {path: 'User-header', component:UserHeaderComponent},

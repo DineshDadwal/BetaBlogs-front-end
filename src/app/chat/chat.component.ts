@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import{FormGroup,FormBuilder,} from '@angular/forms';
+import{FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import{AboutService} from '../services/about/about.service';
 import Swal from 'sweetalert2';
@@ -17,8 +17,8 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
     this.messageForm=this.beta.group({
     
-      name:[''],
-      message:[''],
+      name:['', [Validators.required, Validators.minLength(2), Validators.pattern("[a-z A-Z]*")]],
+      message:['',[Validators.required,Validators.minLength(2)]],
       createdAt:[Date.now()]
     })
   }
@@ -29,7 +29,7 @@ async message(){
     Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: 'Your work has been saved',
+      title: 'Your message has been sent',
       showConfirmButton: false,
       timer: 1500
     })

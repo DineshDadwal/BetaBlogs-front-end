@@ -9,6 +9,7 @@ import {SubcategoryService} from '../services/subcategory/subcategory.service';
 import { LoginService } from '../services/login/login.service';
 import { HttpClient } from '@angular/common/http';
 import {UserDataTableService} from '../services/userDataTable/user-data-table.service';
+import {GoogleLoginService} from '../services/google-login.service';
 @Component({
   selector: 'app-google-user-dashboard',
   templateUrl: './google-user-dashboard.component.html',
@@ -17,7 +18,7 @@ import {UserDataTableService} from '../services/userDataTable/user-data-table.se
 export class GoogleUserDashboardComponent implements OnInit {
 
   dashboardForm:FormGroup
-  constructor(private beta:FormBuilder, private dashboard:DashboardService,private category:CategoryService,private subCategory:SubcategoryService,private login:LoginService, private router: Router, private http:HttpClient, private udt:UserDataTableService) { }
+  constructor(private beta:FormBuilder, private dashboard:DashboardService,private category:CategoryService,private subCategory:SubcategoryService,private login:LoginService, private router: Router, private http:HttpClient, private udt:UserDataTableService, private google:GoogleLoginService) { }
   allCategoryObj;
   user;
   userArr;
@@ -117,7 +118,7 @@ onSubmit(){
   const formData = new FormData;
   formData.append('Upload', this.image);
 // console.log(this.image)
-  this.http.post<any>('http://localhost:3000/dashboard/file', formData).subscribe(
+  this.http.post<any>('https://betablogs-backend.herokuapp.com/dashboard/file', formData).subscribe(
     (res) => console.log(res),
     (err) => console.log(err)
   );
@@ -156,6 +157,8 @@ async logout(){
   this.login.removeJwt();
   this.router.navigateByUrl('/login');
 }
-
+signOut(){
+  this.google.signOut();
+}
 
 }

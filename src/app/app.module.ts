@@ -90,6 +90,7 @@ import { CountViewComponent } from './count-view/count-view.component';
 import { AdminHeaderComponent } from './secondary/admin-header/admin-header.component';
 import { UserHeaderComponent } from './secondary/user-header/user-header.component';
 import { GoogleUserDashboardComponent } from './google-user-dashboard/google-user-dashboard.component';
+import { SpecificBlogComponent } from './specific-blog/specific-blog.component';
 
 // import { SocialLoginModule, GoogleLoginProvider, AuthServiceConfig } from 'angular4-social-login';
 // import {AuthServiceConfig} from  'angular-6-social-login'
@@ -141,7 +142,8 @@ import { GoogleUserDashboardComponent } from './google-user-dashboard/google-use
     CountViewComponent,
     AdminHeaderComponent,
     UserHeaderComponent,
-    GoogleUserDashboardComponent
+    GoogleUserDashboardComponent,
+    SpecificBlogComponent
     
     // dgs
     

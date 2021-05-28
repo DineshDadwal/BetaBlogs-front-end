@@ -27,7 +27,7 @@ data;
   //  this.users = data.data
 
   //   ); 
-    fetch('http://localhost:3000/register/getMenCount').then(res=> res.json()).then(data=>{
+    fetch('https://betablogs-backend.herokuapp.com/register/getMenCount').then(res=> res.json()).then(data=>{
        data.male;
        data.female;
       this.PieChart = new Chart("pieChart", {
@@ -44,9 +44,10 @@ data;
         }
       })
     }
+  
    
      );
-     fetch('http://localhost:3000/dashboard/getBlogStats').then(res=> res.json()).then(data=>{
+     fetch('https://betablogs-backend.herokuapp.com/dashboard/getBlogStats').then(res=> res.json()).then(data=>{
       data.tech;
       data.sports;
       data.politics;

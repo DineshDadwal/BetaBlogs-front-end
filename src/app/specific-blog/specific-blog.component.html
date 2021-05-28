@@ -1,0 +1,34 @@
+<app-sec-header></app-sec-header>
+
+
+<nav aria-label="breadcrumb">
+   <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+     <li class="breadcrumb-item active" aria-current="page"><a routerLink="/specific-blog/{{obj._id}}">{{obj.title}}</a></li>
+     
+   </ol>
+ </nav>
+ <div class="container">
+   <div class="row media"    >
+    <!-- <div class="media"> -->
+      <div id="Content" class="col-lg-4">
+          
+          <img src="https://betablogs-backend.herokuapp.com/uploads/{{obj.Upload.slice(12)}} "width="150px" height="150px" class="card-img-top" alt="..." >
+          <!-- <img src="http://localhost:3000/{{obj.Upload}" class="align-self-center mr-3" alt="..." > -->
+        </div>
+         
+          <div class="col-lg-8" >
+              <h1 class="mt-2">{{obj.title}} </h1>
+              <p class="mb-0"  >{{obj.Content}} </p>
+              
+              
+              <p style="margin-top: 10px;
+              font-weight: 500;">by {{obj.author}}</p> <br>
+              <h6>{{obj.createdAt.slice(0,10)}}</h6>
+              
+           
+        <!-- </div> -->
+ </div>
+ </div>
+ </div>
+<app-footer></app-footer>

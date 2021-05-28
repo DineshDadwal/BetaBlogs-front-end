@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import{FormGroup,FormBuilder,} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import{AboutService} from '../services/about/about.service';
+import{RegisterService} from '../services/register/register.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class ForgotPasswordComponent implements OnInit {
   resetForm:FormGroup
-  constructor(private beta:FormBuilder, private http:HttpClient, private service:AboutService, private router: Router) { }
+  constructor(private beta:FormBuilder, private http:HttpClient, private service:RegisterService, private router: Router) { }
 
   ngOnInit(): void {
     this.resetForm=this.beta.group({

@@ -46,8 +46,8 @@ export class RegisterComponent implements OnInit {
     // alert(res.message)
     Swal.fire({
       icon: 'error',
-      title: 'Oops...',
-      text: 'Something went wrong!',
+      title: 'User Already Exist',
+      text: 'Check your credentials',
       footer: '<a href>Why do I have this issue?</a>'
     })
     this.router.navigateByUrl('/404');

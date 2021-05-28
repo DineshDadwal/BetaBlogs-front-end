@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CategoryService {
-  url = 'http://localhost:3000';
+  url="https://betablogs-backend.herokuapp.com"
+
   constructor(private http: HttpClient) { }
 
   async addCategory(formData) {

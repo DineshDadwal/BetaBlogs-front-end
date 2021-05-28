@@ -17,13 +17,17 @@ export class GoogleLoginService {
       })
     })
    }
-  
+  public token(){
+    this.auth2.isSignedIn
+  }
    public signIn(){
      this.info = this.auth2.currentUser.get().getBasicProfile()
      this.auth2.signIn({
       scope:'https://www.googleapis.com/auth/gmail.readonly'
      }).then(user => {
       this.subject.next(user)
+    this.auth2.isSignedIn
+
       // console.log(user)
       // this.router.navigateByUrl('/user-dashboard')
      }).catch(()=>{
@@ -32,7 +36,7 @@ export class GoogleLoginService {
    }
    public signOut(){
      this.auth2.signOut().then(()=>{
-
+      
      })
    }
    public observable(): Observable<gapi.auth2.GoogleUser>{

@@ -5,7 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RegisterService {
-  url="http://localhost:3000"
+  // url="https://betablogs-backend.herokuapp.com"
+  url = "http://localhost:3000"
+
   constructor(private http:HttpClient) { }
   
   async Register(formData){
@@ -20,4 +22,7 @@ export class RegisterService {
   async updateUserDetails(id,formData){
     return this.http.patch(`${this.url}/reset/updateUserPassword/${id}`, formData).toPromise();
   } 
+  async reset(formData){
+    return this.http.post(`${this.url}/reset/resetPassword`, formData).toPromise();
+  }
 }
