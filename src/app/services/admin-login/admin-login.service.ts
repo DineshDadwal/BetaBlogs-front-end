@@ -4,7 +4,10 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class AdminLoginService {
-  url="https://betablogs-backend.herokuapp.com"
+  // url="https://betablogs-backend.herokuapp.com"
+  url="https://beta-blog-backend.onrender.com"
+
+  // url="http://localhost:3000"
  
   constructor(private http:HttpClient) { }
 

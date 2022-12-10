@@ -337,7 +337,7 @@ mat-icon{
 mat-sidenav{
   display: block;
   position: fixed;
-  
+  width: 250px;
 }
 
 li{

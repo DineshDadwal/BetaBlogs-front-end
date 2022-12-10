@@ -50,7 +50,7 @@ dashboardForm:FormGroup
     const res:any = await this.dashboard.get();
     if(res.success) {
       this.allBlogs=res.data;
-      // console.log(this.allBlogs)
+      console.log(this.allBlogs)
     }
     else{
       alert(res.message)

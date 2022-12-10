@@ -6,8 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AboutService {
-  // url="https://betablogs-backend.herokuapp.com"
-  url="http://localhost:3000"
+  url="https://beta-blog-backend.onrender.com"
+  // url="http://localhost:3000"
   constructor(private http:HttpClient) { }
   async About(formData){
     return this.http.post(`${this.url}/about/about`, formData).toPromise();

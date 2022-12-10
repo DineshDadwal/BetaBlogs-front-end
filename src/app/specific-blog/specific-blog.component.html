@@ -13,7 +13,7 @@
     <!-- <div class="media"> -->
       <div id="Content" class="col-lg-4">
           
-          <img src="https://betablogs-backend.herokuapp.com/uploads/{{obj.Upload.slice(12)}} "width="150px" height="150px" class="card-img-top" alt="..." >
+          <img src="https://beta-blog-backend.onrender.com/uploads/{{obj.Upload.slice(12)}} "width="150px" height="150px" class="card-img-top" alt="..." >
           <!-- <img src="http://localhost:3000/{{obj.Upload}" class="align-self-center mr-3" alt="..." > -->
         </div>
          
@@ -25,10 +25,13 @@
               <p style="margin-top: 10px;
               font-weight: 500;">by {{obj.author}}</p> <br>
               <h6>{{obj.createdAt.slice(0,10)}}</h6>
-              
-           
+              <!-- <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>favorite</mat-icon>
+              </button> -->
         <!-- </div> -->
  </div>
  </div>
  </div>
+
+  
 <app-footer></app-footer>

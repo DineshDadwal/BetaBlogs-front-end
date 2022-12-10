@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RegisterService} from '../services/register/register.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 @Component({
@@ -21,8 +21,8 @@ registerForm:FormGroup
     //   this.user = paramsId.user
     // })
     this.registerForm= this.beta.group({
-      password:[''],
-      confirm:['']
+      password:['', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]],
+      confirm:['', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]]
       
     })
     this.getUserDetails(),
@@ -32,7 +32,7 @@ registerForm:FormGroup
     const res:any = await this.register.getUserDetails();
     if(res.success) {
       this.userArr=res.data;
-      console.log(this.userArr)
+      // console.log(this.userArr)
     }
     else{
       alert(res.message)

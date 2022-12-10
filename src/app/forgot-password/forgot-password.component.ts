@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import{FormGroup,FormBuilder,} from '@angular/forms';
+import{FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import{RegisterService} from '../services/register/register.service';
 import Swal from 'sweetalert2';
@@ -17,7 +17,7 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit(): void {
     this.resetForm=this.beta.group({
     
-      email:['']
+      email:['',[Validators.required, Validators.email]]
     })
   }
 async reset(){
@@ -39,7 +39,7 @@ async reset(){
 Swal.fire({
   icon: 'error',
   title: 'Oops...',
-  text: 'Something went wrong!',
+  text: `User Doesn't exist`,
   footer: '<a href>Why do I have this issue?</a>'
 })
 this.router.navigateByUrl('/404');

@@ -12,18 +12,18 @@
    <form class="form-signin" [formGroup]="loginForm">
        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center" routerLink="/user-dashboard"> Sign in</h1>
        <div class="social-login">
-           <button class="btn facebook-btn social-btn" type="button" (click)="submitLogin()"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
-           <button class="btn google-btn social-btn" type="button" (click)="signIn()" ><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
+           <button class="btn facebook-btn social-btn" type="button" (click)="submitLogin()"><span> Sign in with Facebook</span> </button>
+           <button class="btn google-btn social-btn" type="button" (click)="signIn()" ><span> Sign in with Google</span> </button>
        </div>
        <p style="text-align:center"> OR </p>
        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" formControlName="email">
        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" formControlName="password">
        
-       <button class="btn btn-success btn-block" type="submit"   (click)="Login()"><i class="fas fa-sign-in-alt" ></i> Sign in</button>
+       <button class="btn btn-success btn-block" type="submit"   (click)="Login()"> Sign in</button>
        <a routerLink="/forgotPassword" id="forgot_pswd">Forgot password?</a>
        <hr>
        <!-- <p>Don't have an account!</p>  -->
-       <button class="btn btn-primary btn-block" type="button" id="btn-signup" routerLink="/register"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+       <button class="btn btn-primary btn-block" type="button" id="btn-signup" routerLink="/register"> Sign up New Account</button>
        </form>
 
        <form action="/reset/password/" class="form-reset">
